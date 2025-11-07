@@ -77,6 +77,7 @@ GEMINI_API_KEY=your_api_key_here
 ## ✅ Running the Streamlit App
 
 streamlit run src/streamlit_app.py
+<img width="1905" height="915" alt="image" src="https://github.com/user-attachments/assets/98760dff-d11c-4315-87a9-8e35e4e4ccf6" />
 
 
 ---

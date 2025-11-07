@@ -10,25 +10,21 @@ META_FILE = "data/processed/metadata.json"
 
 class RAGRetriever:
     def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2"):
-        print("🔍 Loading embedding model...")
+        print(" Loading embedding model...")
         self.model = SentenceTransformer(model_name)
 
-        print("📦 Loading FAISS index...")
+        print(" Loading FAISS index...")
         self.index = faiss.read_index(INDEX_FILE)
 
-        print("📄 Loading metadata...")
+        print("Loading metadata...")
         with open(META_FILE, "r", encoding="utf-8") as f:
             self.metadata = json.load(f)
-
-    # -----------------------------------
+            
     # Embed user query
-    # -----------------------------------
     def embed_query(self, query):
         return np.array(self.model.encode([query])).astype("float32")
 
-    # -----------------------------------
     # Search FAISS
-    # -----------------------------------
     def search(self, query, k=5):
         query_vec = self.embed_query(query)
 
@@ -40,9 +36,7 @@ class RAGRetriever:
 
         return results
 
-    # -----------------------------------
     # Build context for LLM
-    # -----------------------------------
     def build_context(self, query, k=5):
         docs = self.search(query, k)
 
@@ -53,9 +47,8 @@ class RAGRetriever:
         return context, docs
 
 
-# -----------------------------------
 # Testing the retriever
-# -----------------------------------
+
 if __name__ == "__main__":
     retriever = RAGRetriever()
 
@@ -63,5 +56,6 @@ if __name__ == "__main__":
 
     context, docs = retriever.build_context(user_q)
 
-    print("\n🔍 Retrieved Context:\n")
+    print("\n Retrieved Context:\n")
     print(context)
+

@@ -9,21 +9,17 @@ OUT_CSV = "data/processed/chunks.csv"
 os.makedirs("data/processed", exist_ok=True)
 
 
-# ----------------------------
 # CLEAN TEXT
-# ----------------------------
+
 def clean_text(text: str) -> str:
     if not isinstance(text, str):
         return ""
-    text = re.sub(r"<.*?>", "", text)   # remove HTML
+    text = re.sub(r"<.*?>", "", text)   
     text = text.replace("\n", " ").strip()
     text = re.sub(r"\s+", " ", text)
     return text
 
-
-# ----------------------------
 # CHUNK GENERATOR
-# ----------------------------
 def chunk_text(text, max_chars=500, overlap=100):
     chunks = []
     start = 0
@@ -33,14 +29,11 @@ def chunk_text(text, max_chars=500, overlap=100):
         end = start + max_chars
         chunk = text[start:end].strip()
         chunks.append(chunk)
-        start += max_chars - overlap  # sliding window
+        start += max_chars - overlap  
 
     return chunks
 
-
-# ----------------------------
 # MAIN CHUNKING PROCESS
-# ----------------------------
 def create_chunks():
     print("📥 Loading dataset:", RAW_CSV)
     df = pd.read_csv(RAW_CSV)
@@ -69,3 +62,4 @@ def create_chunks():
 
 if __name__ == "__main__":
     create_chunks()
+

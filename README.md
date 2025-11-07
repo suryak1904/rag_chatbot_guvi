@@ -50,33 +50,27 @@ guvi-rag-chatbot/
 ├── .gitignore
 └── README.md
 
-yaml
-Copy code
 
 ---
 
 ## ✅ Installation
 
 ### 1. Clone the repository
-git clone https://github.com/your-username/guvi-rag-chatbot.git
+git clone https://github.com/suryak1904/guvi-rag-chatbot.git
 cd guvi-rag-chatbot
 
-shell
-Copy code
+
 
 ### 2. Install dependencies
 pip install -r requirements.txt
 
-yaml
-Copy code
+
 
 ### 3. Add your API key  
 Create a `.env` file:
 
 GEMINI_API_KEY=your_api_key_here
 
-yaml
-Copy code
 
 ✅ This file is not tracked by GitHub
 
@@ -86,8 +80,6 @@ Copy code
 
 streamlit run src/streamlit_app.py
 
-yaml
-Copy code
 
 ---
 
@@ -97,8 +89,6 @@ Run retrieval + generation evaluation:
 
 python src/evaluate_rag.py
 
-yaml
-Copy code
 
 ---
 

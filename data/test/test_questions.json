@@ -1,0 +1,14 @@
+[
+  {
+    "question": "How do I download my certificate?",
+    "expected_answer": "The certificate downloads automatically as a PDF. Check your downloads folder or try using Google Chrome."
+  },
+  {
+    "question": "What is an adjacency matrix in DSA?",
+    "expected_answer": "An adjacency matrix is a 2D array representation of a graph showing edges between nodes. It uses O(N^2) space."
+  },
+  {
+    "question": "What is Plotly used for?",
+    "expected_answer": "Plotly is used for creating interactive and publication-quality visualizations in the browser."
+  }
+]

@@ -1,9 +1,10 @@
 import google.generativeai as genai
 from rag_retriever import RAGRetriever
 import os
+from dotenv import load_dotenv
 
 # Load your Gemini API key
-
+load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY") )
 
 model = genai.GenerativeModel("models/gemini-2.5-flash")
@@ -57,4 +58,5 @@ if __name__ == "__main__":
     print(answer)
 
    
+
 

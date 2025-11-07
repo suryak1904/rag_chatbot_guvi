@@ -1,0 +1,9 @@
+streamlit==1.32.2
+sentence-transformers
+faiss-cpu
+google-generativeai
+pandas
+numpy
+scikit-learn
+protobuf==3.20.3
+python-dotenv

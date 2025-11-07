@@ -31,24 +31,23 @@ It retrieves accurate answers from GUVI Blogs + FAQs using:
 
 guvi-rag-chatbot/
 │
-├── src/
-│ ├── rag_retriever.py
-│ ├── rag_generator_gemini.py
-│ ├── chunk_data.py
-│ ├── embed_data.py
-│ ├── evaluate_rag.py
-│ └── streamlit_app.py
-│
-├── vector_store/
-│ ├── faiss.index
-│ └── metadata.pkl
-│
-├── data/
-│ └── combined_dataset.csv
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
+data/
+  processed/
+  raw/
+  test/
+src/
+  chunker.py
+  embedder.py
+  rag_retriever.py
+  rag_generator_gemini.py
+  streamlit_app.py
+  evaluate_rag.py
+.env.example
+.gitignore
+LICENSE
+README.md
+requirements.txt
+
 
 
 ---
@@ -72,7 +71,6 @@ Create a `.env` file:
 GEMINI_API_KEY=your_api_key_here
 
 
-✅ This file is not tracked by GitHub
 
 ---
 
